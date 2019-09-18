@@ -9,6 +9,8 @@ export class AdminGuard implements CanActivate {
   constructor(public router: Router) { }
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       let user = false;
+      // Get LocalStorage ==> verify
+    
       if (!user) {
         this.router.navigate(['/login']);
         return false;
